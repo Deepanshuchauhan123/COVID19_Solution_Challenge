@@ -1,9 +1,17 @@
 import 'package:covid19/slefDeclaration.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  List<String> users = ["Hospital", "Citizen"];
+  String selectedUser;
   TextEditingController emailEditor = new TextEditingController();
   TextEditingController passEditor = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,7 +102,7 @@ class LoginPage extends StatelessWidget {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 30.0,
+                                  height: 20.0,
                                 ),
                                 Align(
                                     alignment: Alignment.centerLeft,
@@ -145,8 +153,27 @@ class LoginPage extends StatelessWidget {
                                       ),
                                 ),
                                 SizedBox(
-                                  height: 40.0,
-                                )
+                                  height: 10.0,
+                                ),
+                                DropdownButton(
+                                  hint: Text('Select User type',
+                                      style: TextStyle(
+                                          color: Colors.black, fontSize: 15.0)),
+                                  value: selectedUser,
+                                  onChanged: (newValue) {
+                                    setState(() {
+                                      selectedUser = newValue;
+                                    });
+                                  },
+                                  items: users.map((location) {
+                                    return DropdownMenuItem(
+                                      child: new Text(location,
+                                          style:
+                                              TextStyle(color: Colors.black)),
+                                      value: location,
+                                    );
+                                  }).toList(),
+                                ),
                               ],
                             ),
                           ),
