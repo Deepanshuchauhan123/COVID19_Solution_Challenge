@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class register extends StatelessWidget {
+class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,11 +25,16 @@ class register extends StatelessWidget {
                             begin: Alignment.topCenter,
                             end: Alignment.bottomCenter)),
                     child: Padding(
-                      padding: EdgeInsets.only(bottom: 120,left:20,right:20),
-                      child: Image(
-                          width: 40,
-                          height: 40,
-                          image: AssetImage("images/covid19.png")),
+                      padding: EdgeInsets.only(bottom: 80, left: 20, right: 20),
+                      child: Column(
+                        children: <Widget>[
+                          Image(
+                              width: 40,
+                              height: 40,
+                              image: AssetImage("assets/images/covid19.png")),
+                          Text("Awareness About COVID19(Corona Virus)"),
+                        ],
+                      ),
                     )),
                 Padding(
                   //alignment: Alignment.bottomCenter,
@@ -96,7 +101,7 @@ class register extends StatelessWidget {
                                     Align(
                                         alignment: Alignment.centerLeft,
                                         child: Text(
-                                          "Email",
+                                          "Ahaar",
                                           style: TextStyle(
                                               color: Colors.blue,
                                               fontWeight: FontWeight.bold,
@@ -157,7 +162,7 @@ class register extends StatelessWidget {
                                       ),
                                       //onSaved: (value) => ,
                                     ),
-                                     SizedBox(
+                                    SizedBox(
                                       height: 30.0,
                                     ),
                                     Align(
@@ -180,7 +185,7 @@ class register extends StatelessWidget {
                                       ),
                                       //onSaved: (value) => ,
                                     ),
-                                     SizedBox(
+                                    SizedBox(
                                       height: 30.0,
                                     ),
                                     Align(
@@ -203,7 +208,7 @@ class register extends StatelessWidget {
                                       ),
                                       //onSaved: (value) => ,
                                     ),
-                                     SizedBox(
+                                    SizedBox(
                                       height: 30.0,
                                     ),
                                     Align(
@@ -226,7 +231,7 @@ class register extends StatelessWidget {
                                       ),
                                       //onSaved: (value) => ,
                                     ),
-                                     SizedBox(
+                                    SizedBox(
                                       height: 30.0,
                                     ),
                                     Align(

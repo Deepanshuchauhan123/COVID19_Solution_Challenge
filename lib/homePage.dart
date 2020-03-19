@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'loginPage.dart';
+import 'register.dart';
+import 'register.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -206,9 +208,17 @@ class HomePage extends StatelessWidget {
                                     Color(0xFFf7418c)
                                   ])),
                           child: Center(
-                            child: Text(
-                              "Register",
-                              style: TextStyle(fontSize: 12.0),
+                            child: MaterialButton(
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => RegisterPage()));
+                              },
+                              child: Text(
+                                "Register",
+                                style: TextStyle(fontSize: 12.0),
+                              ),
                             ),
                           )),
                       shape: RoundedRectangleBorder(

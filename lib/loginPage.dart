@@ -1,3 +1,4 @@
+import 'package:covid19/slefDeclaration.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -6,6 +7,12 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(""),
+        backgroundColor: Color(0xFF426bd7),
+        elevation: 0.0,
+        automaticallyImplyLeading: false,
+      ),
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
@@ -14,34 +21,54 @@ class LoginPage extends StatelessWidget {
             Column(
               children: <Widget>[
                 Container(
+                  padding: EdgeInsets.only(top: 60.0),
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height / 2,
+                  height: MediaQuery.of(context).size.height / 2.5,
                   decoration: BoxDecoration(
-                      gradient: LinearGradient(colors: [
-                    Color(0xFF3180e4),
-                    Color(0xFF564dc2),
-                  ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
-                  child: Center(
-                    child: Text(
-                      "LET'S STOP\nCOVID19",
-                      style: TextStyle(
-                          fontSize: 32.0,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
+                      image: DecorationImage(
+                          fit: BoxFit.fill,
+                          image: AssetImage("assets/images/fightindia.jpg")),
+                      gradient: LinearGradient(
+                          colors: [
+                            Color(0xFF3180e4),
+                            Color(0xFF564dc2),
+                          ],
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter)),
+                  // child: Center(
+                  //     child: Column(children: <Widget>[
+                  //   Center(
+                  //     child: Text(
+                  //       "#IndiaFightsCorona",
+                  //       textAlign: TextAlign.center,
+                  //       style: TextStyle(
+                  //           fontSize: 29.0,
+                  //           color: Colors.yellow,
+                  //           fontWeight: FontWeight.bold),
+                  //     ),
+                  //   ),
+                  //   Center(
+                  //     child: Text(
+                  //       "Fight of India With Corona\n",
+                  //       textAlign: TextAlign.center,
+                  //       style: TextStyle(fontSize: 18.0, color: Colors.white),
+                  //     ),
+                  //   ),
+                  //   Image(
+                  //       width: 350,
+                  //       image: AssetImage("assets/images/covid19.png")),
+                  // ])),
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height / 2,
+                  height: MediaQuery.of(context).size.height / 2.5,
                   color: Colors.white,
-                )
+                ),
               ],
             ),
             Padding(
               //alignment: Alignment.bottomCenter,
-              padding: EdgeInsets.only(top: 220),
+              padding: EdgeInsets.only(top: 150),
               child: Center(
                 child: Stack(
                   children: <Widget>[
@@ -72,7 +99,7 @@ class LoginPage extends StatelessWidget {
                                 Align(
                                     alignment: Alignment.centerLeft,
                                     child: Text(
-                                      "Email",
+                                      "Adhaar",
                                       style: TextStyle(
                                           color: Colors.blue,
                                           fontWeight: FontWeight.bold,
@@ -128,7 +155,7 @@ class LoginPage extends StatelessWidget {
                     ),
                     Center(
                       child: Padding(
-                        padding: const EdgeInsets.only(top: 370.0),
+                        padding: const EdgeInsets.only(top: 360.0),
                         child: Column(
                           children: <Widget>[
                             Container(
@@ -144,7 +171,13 @@ class LoginPage extends StatelessWidget {
                                     BorderRadius.all(Radius.circular(15.0)),
                               ),
                               child: MaterialButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              SelfDeclaration()));
+                                },
                                 child: Text(
                                   "Login",
                                   style: TextStyle(color: Colors.white),
