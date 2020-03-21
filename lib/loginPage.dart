@@ -1,3 +1,4 @@
+import 'package:covid19/MyHomePage.dart';
 import 'package:covid19/slefDeclaration.dart';
 import 'package:flutter/material.dart';
 
@@ -203,7 +204,7 @@ class _LoginPageState extends State<LoginPage> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              SelfDeclaration()));
+                                              MyHomePage()));
                                 },
                                 child: Text(
                                   "Login",
