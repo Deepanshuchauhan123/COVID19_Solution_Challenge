@@ -35,11 +35,13 @@ class CarouselDemoState extends State<CarouselDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+    
       body: Container(
+        color: Colors.blueAccent,
+      height: MediaQuery.of(context).size.height,
+      width:  MediaQuery.of(context).size.height,
         child: Column(
+             
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
@@ -96,6 +98,7 @@ class CarouselDemoState extends State<CarouselDemo> {
             ),
             SizedBox(
               height: 20.0,
+              
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -103,10 +106,12 @@ class CarouselDemoState extends State<CarouselDemo> {
                 OutlineButton(
                   onPressed: goToPrevious,
                   child: Text("<"),
+                
                 ),
                 OutlineButton(
                   onPressed: goToNext,
                   child: Text(">"),
+                  
                 ),
               ],
             ),
@@ -118,6 +123,7 @@ class CarouselDemoState extends State<CarouselDemo> {
  
   goToPrevious() {
     carouselSlider.previousPage(
+    
         duration: Duration(milliseconds: 300), curve: Curves.ease);
   }
  
