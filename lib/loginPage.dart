@@ -1,3 +1,4 @@
+import 'package:covid19/AudioPlayer.dart';
 import 'package:covid19/BasicHomePage.dart';
 import 'package:covid19/MyHomePage.dart';
 import 'package:covid19/slefDeclaration.dart';
@@ -205,7 +206,7 @@ class _LoginPageState extends State<LoginPage> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              MyHomePage()));
+                                              MyApp()));
                                 },
                                 child: Text(
                                   "Login",
