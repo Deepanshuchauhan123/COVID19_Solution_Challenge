@@ -1,5 +1,8 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+
+import 'AudioPlayer.dart';
  
 class CarouselDemo extends StatefulWidget {
   CarouselDemo() : super();
@@ -91,7 +94,7 @@ class CarouselDemoState extends State<CarouselDemo> {
                   margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: _current == index ? Colors.redAccent : Colors.green,
+                    color: _current == index ? Colors.redAccent : Colors.white,
                   ),
                 );
               }),
@@ -100,23 +103,43 @@ class CarouselDemoState extends State<CarouselDemo> {
               height: 20.0,
               
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                OutlineButton(
-                  onPressed: goToPrevious,
-                  child: Text("<"),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.center,
+            //   children: <Widget>[
+            //     OutlineButton(
+            //       onPressed: goToPrevious,
+            //       child: Text("<"),
                 
-                ),
-                OutlineButton(
-                  onPressed: goToNext,
-                  child: Text(">"),
+            //     ),
+            //     OutlineButton(
+            //       onPressed: goToNext,
+            //       child: Text(">"),
                   
-                ),
-              ],
-            ),
+            //     ),
+            //   ],
+            // ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton.extended
+      (
+        onPressed: () 
+        {
+          Navigator.push
+          (
+            context,
+              MaterialPageRoute(builder: 
+              (context) 
+                => MyApp()),
+          );
+        },
+            label: Text('Audio msg',
+              style:TextStyle(
+                 color: Colors.black,
+                    fontStyle: FontStyle.italic)),
+            icon: Icon(Icons.speaker,
+                color: Colors.blue.shade400,),
+                    backgroundColor: Colors.white,
       ),
     );
   }

@@ -2,8 +2,6 @@ import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:covid19/asset_audio_player_icons.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
-
 class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
@@ -11,21 +9,16 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   final assets = <String>[
-    "assets/audio/WhatsApp Audio 2020-03-23 at 1.49.55 PM.mpeg",
-    "assets/audio/WhatsApp Audio 2020-03-23 at 1.50.06 PM.mpeg",
-    "assets/audio/WhatsApp Audio 2020-03-23 at 1.50.18 PM.mpeg",
-    "assets/audio/WhatsApp Audio 2020-03-23 at 1.50.20 PM.mpeg",
-    "assets/audio/WhatsApp Audio 2020-03-23 at 1.50.24 PM.mpeg",
-    "assets/audio/WhatsApp Audio 2020-03-23 at 1.50.28 PM.mpeg",
-    "assets/audio/WhatsApp Audio 2020-03-23 at 1.50.29 PM.mpeg",
-    "assets/audio/WhatsApp Audio 2020-03-23 at 1.50.30 PM (1).mpeg",
-    "assets/audio/WhatsApp Audio 2020-03-23 at 1.50.30 PM.mpeg",
-    "assets/audio/WhatsApp Audio 2020-03-23 at 1.50.31 PM.mpeg",
-    "assets/audio/WhatsApp Audio 2020-03-23 at 1.50.32 PM.mpeg"   
+    "assets/audio/क्या करें   पीएम मोदी जी द्वारा.mp3",
+    "assets/audio/अमिताभ-बच्चन-का-संदेश.mp3",
+    "assets/audio/क्या-करें अमिताभ-बच्चन-जी-द्वारा.mp3",
+    "assets/audio/पीएम-मोदी-जी-का-संदेश.mp3",
+    "assets/audio/सामान्य जागरूकता ऑडियो अंग्रेजी.mp3",
+    "assets/audio/सामान्य-जागरूकता-ऑडियो-हिंदी.mp3"   
   ];
   final AssetsAudioPlayer _assetsAudioPlayer = AssetsAudioPlayer();
 
-  var _currentAssetPosition = -1;
+  var _currentAssetPosition = 0;
 
   void _open(int assetIndex) {
     _currentAssetPosition = assetIndex % assets.length;
@@ -62,9 +55,10 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+    _open(_currentAssetPosition);
     return MaterialApp(
       home: Scaffold(
-        
+        backgroundColor: Colors.white60,
         body: Padding(
           padding: const EdgeInsets.only(bottom: 15.0),
           child: Column(
@@ -79,7 +73,7 @@ class _MyAppState extends State<MyApp> {
                   ));
                 },
                 child: Text("Playlist of CORONO "),
-                color: Color(0xFF426bd7),
+                color: Color(0xFFE0F2F1),
               ),
               Expanded(
                 child: StreamBuilder(
@@ -102,34 +96,11 @@ class _MyAppState extends State<MyApp> {
                   },
                 ),
               ),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.center,
-              //   mainAxisSize: MainAxisSize.max,
-              //   children: <Widget>[
-              //     StreamBuilder(
-              //       stream: _assetsAudioPlayer.isLooping,
-              //       initialData: false,
-              //       builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
-              //         return RaisedButton(
-              //           child: Text(snapshot.data ? "Looping" : "Not looping"),
-              //           onPressed: () {
-              //             _assetsAudioPlayer.toggleLoop();
-              //           },
-              //         );
-              //       },
-              //     ),
-              //     SizedBox(width: 20),
-              //     RaisedButton(
-              //       child: Text("Seek to 2:00"),
-              //       onPressed: () {
-              //         _assetsAudioPlayer.seek(Duration(minutes: 2));
-              //       },
-              //     ),
-              //   ],
-              // ),
+            
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
+                  
                   StreamBuilder(
                     stream: _assetsAudioPlayer.currentPosition,
                     initialData: const Duration(),
@@ -140,6 +111,7 @@ class _MyAppState extends State<MyApp> {
                   ),
                   Text(" - "),
                   StreamBuilder(
+                    
                     stream: _assetsAudioPlayer.current,
                     builder: (BuildContext context, AsyncSnapshot<PlayingAudio> snapshot) {
                       Duration duration = Duration();
