@@ -58,7 +58,7 @@ class _MyAppState extends State<MyApp> {
     _open(_currentAssetPosition);
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.white60,
+        backgroundColor: Colors.greenAccent,
         body: Padding(
           padding: const EdgeInsets.only(bottom: 15.0),
           child: Column(
@@ -66,14 +66,15 @@ class _MyAppState extends State<MyApp> {
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              RaisedButton(
+              RaisedButton
+              (padding:const EdgeInsets.only(top: 40.0) ,
                 onPressed: (){
                   _assetsAudioPlayer.openPlaylist(Playlist(
                     assetAudioPaths: this.assets
                   ));
                 },
-                child: Text("Playlist of CORONO "),
-                color: Color(0xFFE0F2F1),
+                child: Text("Playlist of CORONO Awareness",style: TextStyle(color: Colors.white),),
+                color: Color(0xFF2E7D32),
               ),
               Expanded(
                 child: StreamBuilder(
@@ -99,13 +100,13 @@ class _MyAppState extends State<MyApp> {
             
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  
+                children: <Widget>[                 
                   StreamBuilder(
                     stream: _assetsAudioPlayer.currentPosition,
                     initialData: const Duration(),
                     builder: (BuildContext context, AsyncSnapshot<Duration> snapshot) {
                       Duration duration = snapshot.data;
+                      
                       return Text(durationToString(duration));
                     },
                   ),

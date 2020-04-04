@@ -38,7 +38,18 @@ class CarouselDemoState extends State<CarouselDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    
+    appBar: AppBar
+        (
+              //  backgroundColor: Colors.white,
+          leading: Padding
+            (
+                padding: EdgeInsets.only(left: 12),
+                child: Image.asset("assets/images/co2.jpeg",width: 30.0,height: 30.0,),
+                
+            ),
+              
+              title: Image.asset('assets/images/for-taskbar-IND (1).gif', fit: BoxFit.cover,alignment: FractionalOffset.center)
+        ),
       body: Container(
         color: Colors.blueAccent,
       height: MediaQuery.of(context).size.height,

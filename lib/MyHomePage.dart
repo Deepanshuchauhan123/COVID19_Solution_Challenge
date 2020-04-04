@@ -1,10 +1,10 @@
 import 'package:covid19/BasicHomePage.dart';
-import 'package:covid19/Chatboat.dart';
 import 'package:covid19/DashboardPage.dart';
 import 'package:covid19/NewsPage.dart';
 import 'package:covid19/UpdatePage.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'Chatbot.dart';
 
 class MyHomePage extends StatefulWidget{
 @override
@@ -18,7 +18,7 @@ class _MyHomePageState extends State<MyHomePage>{
     UpdatePage(),
     NewsPage(),
     CarouselDemo(),
-    Chatboat(),
+    HomePageDialogflow(),
     DashboardPage(),
 
   ];
@@ -34,20 +34,20 @@ Widget build(BuildContext context) {
     //  style: TextStyle(color: Colors.black),),
     //  ),
 
-    appBar: AppBar(
-              //  backgroundColor: Colors.white,
-              leading: Padding(
-                padding: EdgeInsets.only(left: 12),
-                child: Image.asset("assets/images/co2.jpeg",width: 30.0,height: 30.0,),
+    // appBar: AppBar(
+    //           //  backgroundColor: Colors.white,
+    //           leading: Padding(
+    //             padding: EdgeInsets.only(left: 12),
+    //             child: Image.asset("assets/images/co2.jpeg",width: 30.0,height: 30.0,),
                 
-                ),
+    //             ),
               
-              title: Row(
-                // mainAxisAlignment: MainAxisAlignment.center,
-                children:<Widget>[
-                   Text('Fight against CORONO'),
-                ]
-              ),),
+    //           title: Row(
+    //             // mainAxisAlignment: MainAxisAlignment.center,
+    //             children:<Widget>[
+    //                Text('Fight against CORONO'),
+    //             ]
+    //           ),),
 
     // body: Container
     // (
